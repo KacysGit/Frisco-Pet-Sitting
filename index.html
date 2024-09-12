@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kacy Metcalf - Pet Sitting & Dog Walking in Frisco, TX</title>
+    <meta name="description" content="Reliable pet sitting and dog walking services in Frisco, TX. Kacy Metcalf offers professional, personalized care with 11+ years of experience.">
+    <meta name="keywords" content="Frisco pet sitting, dog walking Frisco, professional pet care, experienced pet sitter, pet sitting GrayHawk neighborhood, Kacy Metcalf pet services">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="hero">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Kacy Metcalf's Pet Sitting</h1>
+            <p>Reliable Pet Sitting & Dog Walking in Frisco, TX</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div>
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm Kacy Metcalf! With over 11 years of experience caring for pets, including my black lab Jasmine, I am a devoted pet lover and certified veterinary assistant. 
+                    After completing a 5-year veterinary science program and gaining 350+ hours of hands-on experience at Allen Veterinary Hospital, I offer trusted and professional pet care.
+                </p>
+                <p>
+                    I serve the Frisco, TX area, specifically the GrayHawk neighborhood off Eldorado, providing personalized pet care services. Whether it’s my calm senior dog, Jasmine, or my energetic pup Wallie, I’ve cared for all kinds of furry friends!
+                </p>
+            </div>
+            <img src="images/prof headshot.jpg" alt="Professional Image" aria-label="Professional image of Kacy Metcalf">
+        </section>
+        
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Overnight Pet Sitting (3 days to a month) - $50/day</li>
+                <li>Dog Walking - $20/walk</li>
+                <li>Drop-in Visits - $30/day</li>
+                <li>Experienced with medium and large dogs</li>
+                <li>Personalized care tailored to your pet's needs</li>
+            </ul>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <p>My Pet Wall of Fame</p>
+            <div class="gallery">
+                <img src="images/cigarWallie.png" alt="Kacy With Dog" aria-label="Happy dog enjoying a toy">
+                <img src="images/PorchJasmine.png" alt="Kacy playing with a dog" aria-label="Kacy playing with a dog">
+                <img src="images/muffin.png" alt="Kacy With Cat" aria-label="Two dogs playing together">
+                <img src="images/Trooper.png" alt="Kacy Taking Dog to Lake" aria-label="Two dogs playing together"> 
+                <img src="images/Bear.png" alt="Kacy Sleeping With Cat" aria-label="Two dogs playing together">
+                <img src="images/Jasmine.png" alt="Kacy With Dog" aria-label="Two dogs playing together">
+                <img src="images/SmirkWallie.png" alt="Kacy With Dog, Both Smirking" aria-label="Two dogs playing together">
+                <img src="images/HappyWallie.png" alt="Kacy With Very Happy Dog" aria-label="Two dogs playing together">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Looking for a reliable pet sitter or dog walker? Contact me today!</p>
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <input type="submit" value="Send">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kacy Metcalf - Pet Sitting Services | Reliable & Caring Pet Care</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Modal Image">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+        <button class="close-button">&times;</button>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+/* Navigation bar styling */
+nav {
+    background-color: #333;
+    position: fixed; /* Sticks to the top and stays there */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures nav stays on top of everything */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the navigation links */
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Text inside hero section */
+#hero h1, #hero h2, #hero p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds dark shadow to the text */
+    color: white; /* Ensures the text color is white for better contrast */
+}
+
+/* Hero section styling */
+#hero {
+    padding-top: 8rem;
+    background-image: url('http://www.wallpaperbetter.com/wallpaper/527/385/165/two-dogs-in-the-sun-on-the-grass-2K-wallpaper-middle-size.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Additional body and page adjustments */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6a9fb5;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+main {
+    padding-top: 2rem; /* Creates space for content under the hero section */
+}
+
+/* Gallery styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    gap: 1%; /* Space between images */
+    justify-content: center;
+    margin-top: 3rem; /* Adds some space above the gallery */
+    background-color: #f0f0f0; /* Light background for gallery */
+    padding: 1rem; /* Padding around the gallery, reduced for a smaller container */
+    border-radius: 8px; /* Rounded corners for gallery container */
+    max-width: 100%; /* Ensure the gallery container width adjusts to screen size */
+}
+
+/* Gallery images styling */
+.gallery img {
+    width: 70%; /* Make image 70% of the grid cell size */
+    height: 70%; /* Make image height 70% of the grid cell size */
+    object-fit: cover; /* Ensures images fit perfectly within the grid cell */
+    cursor: pointer; /* Indicate that the image is clickable */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: block; /* Remove extra space below images */
+    margin: auto; /* Center images within their container */
+}
+
+/* Ensure gallery items are squares */
+.gallery-item {
+    aspect-ratio: 1 / 1; /* Force the grid items to be square */
+    height: 0;
+    padding-top: 15%; /* Set padding to create a 15% height based on width */
+    position: relative; /* To make the image fill the container */
+}
+
+.gallery-item img {
+    position: absolute; /* Position the image inside the gallery item */
+    top: 50%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%); /* Center the image perfectly */
+    width: 70%; /* Make image 70% of the grid cell size */
+    height: 70%; /* Make image height 70% of the grid cell size */
+}
+
+/* Hover effects for images */
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect on hover */
+}
+
+
+
+
+.gallery h2 {
+    text-align: center; /* Center align heading */
+    color: #333; /* Darker text color for headings */
+    margin-bottom: 1rem; /* Spacing below the heading */
+}
+
+.gallery p {
+    text-align: center; /* Center align paragraph text */
+    color: #555; /* Softer text color for paragraphs */
+    line-height: 1.6; /* Improved readability */
+    margin: 0; /* Remove margin to compact the section */
+}
+
+/* Gallery section styling */
+#gallery {
+    background-color: #f0f0f0; /* Match the gallery background color */
+    padding: 2rem; /* Add some padding around the gallery section */
+    border-radius: 8px; /* Rounded corners for the section */
+    margin-top: 3rem; /* Space above the gallery section */
+    text-align: center; /* Center align text within the section */
+}
+
+#gallery h2 {
+    color: #333; /* Darker text color for headings */
+    margin-bottom: 1rem; /* Spacing below the heading */
+}
+
+#gallery p {
+    color: #555; /* Softer text color for paragraphs */
+    line-height: 1.6; /* Improved readability */
+    margin: 0; /* Remove margin to compact the section */
+}
+
+
+/* Modal (popup) styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative; /* Relative positioning for child elements */
+    width: 80%; /* Takes up 80% of the screen width */
+    height: 80%; /* Takes up 80% of the screen height */
+}
+
+.modal-content img {
+    width: 100%; /* Make image fit the container width */
+    height: 100%; /* Make image fit the container height */
+    object-fit: contain; /* Ensures the image fits inside the container without distortion */
+}
+
+/* Navigation arrows styling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem; /* Larger font size for arrows */
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1002; /* Ensure arrows are above other elements */
+    border-radius: 50%; /* Rounded button for arrows */
+}
+
+.arrow-left {
+    left: 10px; /* Position left arrow */
+}
+
+.arrow-right {
+    right: 10px; /* Position right arrow */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+
+/* Services section styling */
+#services {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 1rem; /* Space between items */
+    padding: 1rem; /* Padding around the section */
+}
+
+#services ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if needed */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 1rem; /* Space between items */
+}
+
+#services li {
+    background: #f4f4f4;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 30%; /* Adjust as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* White text for readability */
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About Me section styling */
+#about {
+    background-color: #f9f9f9; /* Light background to contrast with other sections */
+    padding: 2rem 1rem; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    margin: 1rem 0; /* Margin for spacing between sections */
+    max-width: 90%; /* Max width of the section */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically center-align items */
+    gap: 1rem; /* Space between text and image */
+}
+
+#about div {
+    max-width: 60%; /* Text area width */
+}
+
+#about img {
+    max-width: 30%; /* Size of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    display: block; /* Ensure image is treated as a block element */
+    margin-left: 10%;
+    margin-right: 3%;
+}
+
+#about h2 {
+    color: #333; /* Darker text color for headings */
+    margin-bottom: 1rem; /* Spacing below the heading */
+    margin-left: 3%;
+}
+
+#about p {
+    color: #555; /* Softer text color for paragraphs */
+    line-height: 1.6; /* Improved readability */
+    margin-bottom: 1rem; /* Spacing between paragraphs */
+    margin-left: 3%;
+}
+
+
+/* Contact section styling */
+#contact {
+    background-color: #eaf4f4; /* Soft background color */
+    padding: 1rem; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 90%; /* Max width of the colored background */
+    margin: 1rem auto; /* Center align and margin between sections */
+}
+
+#contact h2 {
+    color: #333; /* Darker text color for headings */
+    margin-bottom: 0.5rem; /* Spacing below the heading */
+}
+
+#contact p {
+    color: #555; /* Softer text color for paragraphs */
+    margin-bottom: 0.5rem; /* Spacing below the paragraph */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem; /* Minimal space between form elements */
+    max-width: 70%; /* Max width of the form elements */
+    margin: 0 auto; /* Center align the form */
+}
+
+label {
+    font-weight: bold; /* Make labels stand out */
+    margin-bottom: 0.1rem; /* Minimal space below labels */
+}
+
+input[type="text"], input[type="email"], textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    font-size: 1rem;
+    margin-bottom: 0.1rem; /* Minimal space below input fields */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resize for textarea */
+}
+
+input[type="submit"] {
+    background-color: #6a9fb5; /* Match with header color */
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem; /* Space above submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #5a8db0; /* Slightly darker shade on hover */
+}
