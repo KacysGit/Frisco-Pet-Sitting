@@ -179,15 +179,17 @@ main {
 }
 
 .modal-content {
-    position: relative; /* Relative positioning for child elements */
-    width: 80%; /* Takes up 80% of the screen width */
-    height: 80%; /* Takes up 80% of the screen height */
+    width: 90%; /* Adjusted width for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+    max-width: 600px; /* Max width to prevent it from becoming too large on larger screens */
+    max-height: 90vh; /* Ensure modal content doesn't exceed the viewport height */
+    overflow: auto; /* Allow scrolling if content exceeds viewport */
 }
 
 .modal-content img {
-    width: 100%; /* Make image fit the container width */
-    height: 100%; /* Make image fit the container height */
-    object-fit: contain; /* Ensures the image fits inside the container without distortion */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80vh; /* Prevent image from exceeding viewport height */
 }
 
 /* Navigation arrows styling */
