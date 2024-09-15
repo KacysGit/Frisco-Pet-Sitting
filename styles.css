@@ -1,13 +1,16 @@
 /* Navigation bar styling */
 /* Prevent horizontal scrolling */
 body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 /* Ensure images and content within containers do not cause overflow */
 img {
-    max-width: 100%; /* Ensure images scale within their containers */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 nav {
@@ -63,12 +66,6 @@ nav ul li a:hover {
     align-items: center;
 }
 
-/* Additional body and page adjustments */
-body {
-    margin: 0;
-    padding: 0;
-}
-
 header {
     background-color: #6a9fb5;
     color: white;
@@ -81,27 +78,37 @@ main {
 }
 
 /* Gallery styling */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
-    gap: 1%; /* Space between images */
-    justify-content: center;
-    margin-top: 3rem; /* Adds some space above the gallery */
-    background-color: #f0f0f0; /* Light background for gallery */
-    padding: 1rem; /* Padding around the gallery, reduced for a smaller container */
-    border-radius: 8px; /* Rounded corners for gallery container */
-    max-width: 100%; /* Ensure the gallery container width adjusts to screen size */
+.gallery-item {
+    aspect-ratio: 1 / 1; /* Force grid items to be square */
 }
 
-/* Gallery images styling */
+/* Gallery layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+    gap: 1%; /* Space between images */
+    justify-content: center;
+    margin-top: 3rem;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Adjust image sizes inside the gallery */
 .gallery img {
-    width: 70%; /* Make image 70% of the grid cell size */
-    height: 70%; /* Make image height 70% of the grid cell size */
-    object-fit: cover; /* Ensures images fit perfectly within the grid cell */
-    cursor: pointer; /* Indicate that the image is clickable */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    display: block; /* Remove extra space below images */
-    margin: auto; /* Center images within their container */
+    display: block;
+    margin: auto;
+}
+
+/* Hover effects for gallery images */
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Ensure gallery items are squares */
@@ -120,15 +127,6 @@ main {
     width: 70%; /* Make image 70% of the grid cell size */
     height: 70%; /* Make image height 70% of the grid cell size */
 }
-
-/* Hover effects for images */
-.gallery img:hover {
-    transform: scale(1.05); /* Slight zoom-in effect on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect on hover */
-}
-
-
-
 
 .gallery h2 {
     text-align: center; /* Center align heading */
@@ -166,30 +164,32 @@ main {
 
 /* Modal (popup) styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1001;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    width: 90%; /* Adjusted width for smaller screens */
-    height: auto; /* Allow height to adjust based on content */
-    max-width: 600px; /* Max width to prevent it from becoming too large on larger screens */
-    max-height: 90vh; /* Ensure modal content doesn't exceed the viewport height */
-    overflow: auto; /* Allow scrolling if content exceeds viewport */
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content img {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
     max-height: 80vh; /* Prevent image from exceeding viewport height */
+    object-fit: contain; /* Ensure the image fits nicely within the modal */
 }
 
 /* Navigation arrows styling */
@@ -197,14 +197,14 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3rem; /* Larger font size for arrows */
+    font-size: 2.5rem; /* Smaller font size for mobile */
     color: white;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     border: none;
-    padding: 1rem;
+    padding: 0.8rem;
     cursor: pointer;
-    z-index: 1002; /* Ensure arrows are above other elements */
-    border-radius: 50%; /* Rounded button for arrows */
+    z-index: 1002;
+    border-radius: 50%;
 }
 
 .arrow-left {
@@ -217,15 +217,14 @@ main {
 
 .close-button {
     position: absolute;
-    top: 3rem;
-    right: 26rem; /* Adjusted for better fit on small screens */
-    font-size: 2rem; /* Adjust font size for better fit on small screens */
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
     color: white;
     cursor: pointer;
     background: none;
     border: none;
 }
-
 
 /* Services section styling */
 #services {
@@ -364,4 +363,44 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #5a8db0; /* Slightly darker shade on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        gap: 1.5%;
+    }
+
+    .arrow-left {
+        left: 1rem; /* Position arrows closer to the edges on mobile */
+    }
+
+    .arrow-right {
+        right: 1rem;
+    }
+
+    .close-button {
+        right: 1rem; /* Adjust close button for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 85vh; /* Adjust modal size for very small screens */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on extra-small screens */
+        gap: 2%;
+    }
+
+    .arrow-left, .arrow-right {
+        font-size: 2rem; /* Reduce arrow size further */
+    }
+
+    .close-button {
+        font-size: 1.8rem; /* Adjust close button size for small screens */
+    }
 }
