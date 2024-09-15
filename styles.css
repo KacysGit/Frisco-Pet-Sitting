@@ -362,6 +362,25 @@ input[type="submit"]:hover {
 }
 
 /* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        gap: 1.5%;
+    }
+
+    .arrow-left {
+        left: 1rem; /* Position arrows closer to the edges on mobile */
+    }
+
+    .arrow-right {
+        right: 1rem;
+    }
+
+    .close-button {
+        right: 1rem; /* Adjust close button for mobile */
+    }
+}
+
 @media (max-width: 480px) {
     .modal-content {
         max-width: 95%;
