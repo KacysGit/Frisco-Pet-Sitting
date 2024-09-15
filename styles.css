@@ -78,37 +78,27 @@ main {
 }
 
 /* Gallery styling */
-.gallery-item {
-    aspect-ratio: 1 / 1; /* Force grid items to be square */
-}
-
-/* Gallery layout */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
     gap: 1%; /* Space between images */
     justify-content: center;
-    margin-top: 3rem;
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-radius: 8px;
+    margin-top: 3rem; /* Adds some space above the gallery */
+    background-color: #f0f0f0; /* Light background for gallery */
+    padding: 1rem; /* Padding around the gallery, reduced for a smaller container */
+    border-radius: 8px; /* Rounded corners for gallery container */
+    max-width: 100%; /* Ensure the gallery container width adjusts to screen size */
 }
 
-/* Adjust image sizes inside the gallery */
+/* Gallery images styling */
 .gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
+    width: 70%; /* Make image 70% of the grid cell size */
+    height: 70%; /* Make image height 70% of the grid cell size */
+    object-fit: cover; /* Ensures images fit perfectly within the grid cell */
+    cursor: pointer; /* Indicate that the image is clickable */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    display: block;
-    margin: auto;
-}
-
-/* Hover effects for gallery images */
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: block; /* Remove extra space below images */
+    margin: auto; /* Center images within their container */
 }
 
 /* Ensure gallery items are squares */
@@ -127,6 +117,15 @@ main {
     width: 70%; /* Make image 70% of the grid cell size */
     height: 70%; /* Make image height 70% of the grid cell size */
 }
+
+/* Hover effects for images */
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect on hover */
+}
+
+
+
 
 .gallery h2 {
     text-align: center; /* Center align heading */
