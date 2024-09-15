@@ -69,29 +69,27 @@ main {
     padding-top: 2rem; /* Creates space for content under the hero section */
 }
 
-/* Gallery styling */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
-    gap: 1%; /* Space between images */
+    grid-template-columns: repeat(4, 15%); /* 4 columns with each item 15% wide */
+    gap: 3%; /* 3% space between items */
     justify-content: center;
-    margin-top: 3rem; /* Adds some space above the gallery */
-    background-color: #f0f0f0; /* Light background for gallery */
-    padding: 1rem; /* Padding around the gallery, reduced for a smaller container */
-    border-radius: 8px; /* Rounded corners for gallery container */
-    max-width: 100%; /* Ensure the gallery container width adjusts to screen size */
+    margin-top: 3rem;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 100%;
 }
 
-/* Gallery images styling */
 .gallery img {
-    width: 70%; /* Make image 70% of the grid cell size */
-    height: 70%; /* Make image height 70% of the grid cell size */
-    object-fit: cover; /* Ensures images fit perfectly within the grid cell */
-    cursor: pointer; /* Indicate that the image is clickable */
+    width: 100%; /* Fill the grid column width */
+    height: 100%; /* Maintain square ratio */
+    object-fit: cover; /* Ensure images are fully contained in the grid item */
+    cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    display: block; /* Remove extra space below images */
-    margin: auto; /* Center images within their container */
+    display: block;
 }
+
 
 /* Ensure gallery items are squares */
 .gallery-item {
