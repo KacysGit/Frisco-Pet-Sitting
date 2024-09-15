@@ -192,6 +192,13 @@ main {
     max-height: 80vh; /* Prevent image from exceeding viewport height */
 }
 
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%; /* Increase width on smaller screens */
+    }
+}
+
+
 /* Navigation arrows styling */
 .arrow {
     position: absolute;
