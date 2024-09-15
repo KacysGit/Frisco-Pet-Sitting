@@ -192,13 +192,6 @@ main {
     max-height: 80vh; /* Prevent image from exceeding viewport height */
 }
 
-@media (max-width: 600px) {
-    .modal-content {
-        width: 95%; /* Increase width on smaller screens */
-    }
-}
-
-
 /* Navigation arrows styling */
 .arrow {
     position: absolute;
@@ -215,18 +208,18 @@ main {
 }
 
 .arrow-left {
-    left: 10px; /* Position left arrow */
+    left: 25rem; /* Position left arrow */
 }
 
 .arrow-right {
-    right: 10px; /* Position right arrow */
+    right: 25rem; /* Position right arrow */
 }
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 40px;
+    top: 3rem;
+    right: 26rem; /* Adjusted for better fit on small screens */
+    font-size: 2rem; /* Adjust font size for better fit on small screens */
     color: white;
     cursor: pointer;
     background: none;
