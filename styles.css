@@ -7,10 +7,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 /* Ensure images and content within containers do not cause overflow */
 img {
     max-width: 100%;
