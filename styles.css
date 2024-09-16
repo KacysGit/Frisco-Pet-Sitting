@@ -364,7 +364,7 @@ input[type="submit"]:hover {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        grid-template-columns: repeat(3, 1fr); /* 2 columns on smaller screens */
         gap: 1.5%;
     }
 
@@ -387,11 +387,6 @@ input[type="submit"]:hover {
         max-height: 85vh; /* Adjust modal size for very small screens */
     }
 
-    .gallery {
-        grid-template-columns: repeat(1, 1fr); /* 1 column on extra-small screens */
-        gap: 2%;
-    }
-
     .arrow-left, .arrow-right {
         font-size: 2rem; /* Reduce arrow size further */
     }
@@ -400,3 +395,9 @@ input[type="submit"]:hover {
         font-size: 1.8rem; /* Adjust close button size for small screens */
     }
 }
+
+@media screen and (max-width: 480px) {
+    .gallery {
+      grid-template-columns: repeat(4, 5%); /* Further decrease image size */
+    }
+  }
